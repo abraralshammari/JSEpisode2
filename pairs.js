@@ -17,8 +17,18 @@
 * - It returns an empty array if it gets passed nothing:
 *       pairs() returns []
 ****************************************************************/
-function pairs(names) {
+function pairs(names =[]) {
   // Your code goes here
+  const newPairing = [];
+
+  while (names.length >1)
+  {
+    newPairing.push([names.getRandom() , names.getRandom()]);
+  }
+  if (names.length){
+    newPairing.push(names);
+  }
+  return newPairing;
 }
 
 module.exports = pairs;
@@ -41,4 +51,4 @@ Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random()*this.length), 1)[0];
 }
 
-console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
+console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'HusseSin', 'Lailz', 'Mr Potato']));
